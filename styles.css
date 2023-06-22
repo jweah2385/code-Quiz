@@ -83,9 +83,6 @@ h1 {
   top: 1rem;
 }
 
-.questions {
-  display: none;
-}
 .question-buttons {
   color: white;
   background-color: #40128b;
@@ -122,7 +119,6 @@ h2 {
   align-items: left;
   width: 60%;
   left: 20%;
-  display: none;
 }
 
 .done-page h1 {
@@ -186,7 +182,6 @@ h4 {
   align-items: left;
   width: 60%;
   left: 35%;
-  display: none;
 }
 
 .high-score-buttons {
@@ -220,4 +215,8 @@ h4 {
 
 button:hover {
   background-color: #9336b4;
+}
+
+.disappear {
+  display: none;
 }

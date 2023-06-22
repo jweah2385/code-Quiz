@@ -39,22 +39,208 @@
           score/time by ten seconds!
         </p>
       </div>
-      <button class="start-button">Start Quiz</button>
+      <button id="start-button" class="start-button">Start Quiz</button>
     </main>
     <section class="questions">
-      <h1>Arrays in JavaScript can be used to store ________.</h1>
-      <div class="buttons">
-        <button class="question-buttons">1. numbers and strings</button>
-        <button class="question-buttons">2. other arrays</button>
-        <button class="question-buttons">3. booleans</button>
-        <button class="question-buttons">4. all of the above</button>
+      <div class="question1 disappear">
+        <h1>
+          1. Which method is used to add an element to the end of an array in
+          JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">1. push()</button>
+          <button class="question-buttons">2. pop()</button>
+          <button class="question-buttons">3. shift()</button>
+          <button class="question-buttons">4. unshift()</button>
+        </div>
+        <!--push()-->
       </div>
-      <div class="">
+
+      <div class="question2 disappear">
+        <h1>2. What does the "this" keyword refer to in JavaScript?</h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. The current function being executed
+          </button>
+          <button class="question-buttons">2. The global object</button>
+          <button class="question-buttons">
+            3. The parent object of the current object
+          </button>
+          <button class="question-buttons">
+            4. It depends on the context in which it is used
+          </button>
+          <!--It depends on the context in which it is used-->
+        </div>
+      </div>
+
+      <div class="question3 disappear">
+        <h1>
+          3. Which of the following is NOT a valid way to declare a variable in
+          JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">1. var x = 5;</button>
+          <button class="question-buttons">2. let y = 10;</button>
+          <button class="question-buttons">3. cont z = 15;</button>
+          <button class="question-buttons">4. int a = 20;</button>
+        </div>
+        <!--int a = 20;-->
+      </div>
+
+      <div class="question4 disappear">
+        <h1>
+          4. Which of the following methods is used to add an element at the ene
+          of an array in JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">1. puch()</button>
+          <button class="question-buttons">2. append()</button>
+          <button class="question-buttons">3. add()</button>
+          <button class="question-buttons">4. insert()</button>
+        </div>
+        <!--push()-->
+      </div>
+
+      <div class="question5 disappear">
+        <h1>
+          5. What is the purpose of the "use strict" directive in JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. To enable strict mode and enforce stricter parsing and error
+            handling
+          </button>
+          <button class="question-buttons">
+            2. To indicate that the script should be run in strict security mode
+          </button>
+          <button class="question-buttons">
+            3. To allow the use of newer JavaScript features
+          </button>
+          <button class="question-buttons">
+            4. It is a deprecated directive and no longer servers any purpose
+          </button>
+        </div>
+        <!--To enable strict mode and enforce stricter parsing and error handling-->
+      </div>
+
+      <div class="question6 disappear">
+        <h1>
+          6. What is the difference between "undefined" and "null" in
+          JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. They are essentially the same and can be used interchangeably
+          </button>
+          <button class="question-buttons">
+            2. "Undefined" represents the absence of a value, while "null"
+            represents an intentional absence of a value
+          </button>
+          <button class="question-buttons">
+            3. "Null" is used for variables that have not been declared, while
+            "undefined" is used for variables that have been declared but have
+            not been assigned a value
+          </button>
+          <button class="question-buttons">
+            4. "Undefined" is a primitive data type, while "null" is an object
+          </button>
+        </div>
+        <!--"Undefined" represents the absence of a value, while "null" represents an intentional absence of a value-->
+      </div>
+
+      <div class="question7 disappear">
+        <h1>
+          7. What is the difference between "==" and "===" operators in
+          JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. Both operators perform strict equality checks
+          </button>
+          <button class="question-buttons">
+            2. "==" performs type coercion, while "==" performs strict equality
+            without type coercion
+          </button>
+          <button class="question-buttons">
+            3. "==" performs loose equality checks, while "===" performs strict
+            equality checks
+          </button>
+          <button class="question-buttons">
+            4. "==" is used for numeric comparisons, while "===" is used for
+            string comparisons
+          </button>
+        </div>
+        <!--"==" performs loose equality checks, while "===" performs strict equality checks-->
+      </div>
+
+      <div class="question8 disappear">
+        <h1>
+          8. What is the purpose of the "async" and "await" keywords in
+          JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. They are used to define asynchronous functions
+          </button>
+          <button class="question-buttons">
+            2. They are used to handle errors in asynchronous code
+          </button>
+          <button class="question-buttons">
+            3. They are used to define event handlers
+          </button>
+          <button class="question-buttons">
+            4. They are deprecated keywords and should not be used
+          </button>
+        </div>
+        <!--They are used to define asynchronous functions-->
+      </div>
+      <div class="question9 disappear">
+        <h1>
+          9. What is the difference between "let" and "var" in JavaScript?
+        </h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. There is no difference; they can be used interchangeably
+          </button>
+          <button class="question-buttons">
+            2. "let" allows redeclaration of variables in the same scope, while
+            "var" does not
+          </button>
+          <button class="question-buttons">
+            3. "let" is block-scoped, while "var" is function-scoped
+          </button>
+          <button class="question-buttons">
+            4. "let" is a newer keyword introduced in ECMAScript 6, while "var"
+            is an older keyword
+          </button>
+        </div>
+        <!--"let" is block-scoped, while "var" is function-scoped-->
+      </div>
+      <div class="question10 disappear">
+        <h1>10. What is the purpose of a closure in JavaScript?</h1>
+        <div class="buttons">
+          <button class="question-buttons">
+            1. To prevent the execution of certain code
+          </button>
+          <button class="question-buttons">
+            2. To secure and encrypt data
+          </button>
+          <button class="question-buttons">
+            3. To control the visibility and scope of variables
+          </button>
+          <button class="question-buttons">
+            4. It is a deprecated feature and should be used
+          </button>
+        </div>
+        <!--To control the visibility and scope of the variables-->
+      </div>
+      <div class="question10 disappear"></div>
+      <div class="disappear">
         <hr />
         <h2>Correct!</h2>
       </div>
     </section>
-    <section class="done-page">
+    <section class="done-page disappear">
       <h1>All done!</h1>
       <h3>Your final score is</h3>
       <div class="enter-info">
@@ -65,7 +251,7 @@
       <hr class="done-page-hr" />
       <h4>Wrong!</h4>
     </section>
-    <section class="high-score">
+    <section class="high-score disappear">
       <h1>High Scores</h1>
       <p class="score">1.AB - 22</p>
       <div class="high-score-buttons">
@@ -73,5 +259,6 @@
         <button>Clear high Score</button>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
