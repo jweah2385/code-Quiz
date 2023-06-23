@@ -15,6 +15,12 @@ var question9 = document.querySelector('.question9');
 var question10 = document.querySelector('.question10');
 var result = document.querySelector('.result');
 var result2 = document.querySelector('.result2');
+var lastResult = document.querySelector('.last-result');
+var lastResult2 = document.querySelector('.last-result2');
+var allDoneBtn = document.querySelector('.done-page-button');
+var returnHomeBtn = document.querySelector('.go-back-button');
+var clearScoreBtn = document.querySelector('.clear-score');
+var score = document.querySelector('.score');
 
 startBtn.addEventListener('click', function () {
   introPage.classList.add('disappear');
@@ -23,6 +29,7 @@ startBtn.addEventListener('click', function () {
   const answer1 = (event) => {
     let clickedValue = event.target.textContent;
     //console.log(clickedValue);
+    score.classList.remove('disappear');
     if (clickedValue.trim() == '1. push()') {
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
@@ -121,16 +128,129 @@ startBtn.addEventListener('click', function () {
     }
   };
 
+  const answer6 = (event) => {
+    var sixthAns = event.target.textContent;
+    if (sixthAns.trim() == '1. "52"') {
+      question6.classList.add('disappear');
+      question7.classList.remove('disappear');
+      result.classList.remove('disappear');
+      setTimeout(() => {
+        result.classList.add('disappear');
+      }, 1000);
+    } else {
+      question6.classList.add('disappear');
+      question7.classList.remove('disappear');
+      result2.classList.remove('disappear');
+      setTimeout(() => {
+        result2.classList.add('disappear');
+      }, 1000);
+    }
+  };
+
+  const answer7 = (event) => {
+    var sevethAns = event.target.textContent;
+    if (sevethAns.trim() == '2. It determines the type of a variable') {
+      question7.classList.add('disappear');
+      question8.classList.remove('disappear');
+      result.classList.remove('disappear');
+      setTimeout(() => {
+        result.classList.add('disappear');
+      }, 1000);
+    } else {
+      question7.classList.add('disappear');
+      question8.classList.remove('disappear');
+      result2.classList.remove('disappear');
+      setTimeout(() => {
+        result2.classList.add('disappear');
+      }, 1000);
+    }
+  };
+
+  const answer8 = (event) => {
+    var eigthAns = event.target.textContent;
+    if (eigthAns.trim() == '2. break') {
+      question8.classList.add('disappear');
+      question9.classList.remove('disappear');
+      result.classList.remove('disappear');
+      setTimeout(() => {
+        result.classList.add('disappear');
+      }, 1000);
+    } else {
+      question8.classList.add('disappear');
+      question9.classList.remove('disappear');
+      result2.classList.remove('disappear');
+      setTimeout(() => {
+        result2.classList.add('disappear');
+      }, 1000);
+    }
+  };
+
+  const answer9 = (event) => {
+    var sevethAns = event.target.textContent;
+    if (sevethAns.trim() == '3. concat()') {
+      question9.classList.add('disappear');
+      question10.classList.remove('disappear');
+      result.classList.remove('disappear');
+      setTimeout(() => {
+        result.classList.add('disappear');
+      }, 1000);
+    } else {
+      question9.classList.add('disappear');
+      question10.classList.remove('disappear');
+      result2.classList.remove('disappear');
+      setTimeout(() => {
+        result2.classList.add('disappear');
+      }, 1000);
+    }
+  };
+
+  const answer10 = (event) => {
+    var tenthAns = event.target.textContent;
+    if (
+      tenthAns.trim() == '3. To control the visibility and scope of variables'
+    ) {
+      question10.classList.add('disappear');
+      donPage.classList.remove('disappear');
+      lastResult.classList.remove('disappear');
+      setTimeout(() => {
+        lastResult.classList.add('disappear');
+      }, 1000);
+    } else {
+      question10.classList.add('disappear');
+      donPage.classList.remove('disappear');
+      lastResult2.classList.remove('disappear');
+      setTimeout(() => {
+        lastResult2.classList.add('disappear');
+      }, 1000);
+    }
+  };
+
+  const submit = (event) => {
+    donPage.classList.add('disappear');
+    highScorePage.classList.remove('disappear');
+    returnHomeBtn.addEventListener('click', home);
+  };
+  const home = (event) => {
+    highScorePage.classList.add('disappear');
+    introPage.classList.remove('disappear');
+  };
+
+  const clearScore = (event) => {
+    score.classList.add('disappear');
+  };
   question1.addEventListener('click', answer1);
   question2.addEventListener('click', answer2);
   question3.addEventListener('click', answer3);
   question4.addEventListener('click', answer4);
   question5.addEventListener('click', answer5);
-  question5.addEventListener('click', answer6);
-  question5.addEventListener('click', answer7);
-  question5.addEventListener('click', answer8);
-  question5.addEventListener('click', answer9);
-  question5.addEventListener('click', answer10);
+  question6.addEventListener('click', answer6);
+  question7.addEventListener('click', answer7);
+  question8.addEventListener('click', answer8);
+  question9.addEventListener('click', answer9);
+  question10.addEventListener('click', answer10);
+  allDoneBtn.addEventListener('click', submit);
+  returnHomeBtn.addEventListener('click', home);
+  clearScoreBtn.addEventListener('click', clearScore);
 });
 
 var clear = setTimeout(() => {
