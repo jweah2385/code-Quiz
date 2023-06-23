@@ -21,23 +21,30 @@ var allDoneBtn = document.querySelector('.done-page-button');
 var returnHomeBtn = document.querySelector('.go-back-button');
 var clearScoreBtn = document.querySelector('.clear-score');
 var score = document.querySelector('.score');
+var input = document.querySelector('input');
 
+var totalScore = 0;
 startBtn.addEventListener('click', function () {
   introPage.classList.add('disappear');
   question1.classList.remove('disappear');
-
   const answer1 = (event) => {
-    let clickedValue = event.target.textContent;
+    let firstAns = event.target.textContent;
     //console.log(clickedValue);
     score.classList.remove('disappear');
-    if (clickedValue.trim() == '1. push()') {
+    if (firstAns.trim() == '1. push()') {
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      firstAns.trim() == '2. pop()' ||
+      firstAns.trim() == '3. shift()' ||
+      firstAns.trim() == '4. unshift()'
+    ) {
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -56,10 +63,16 @@ startBtn.addEventListener('click', function () {
       question2.classList.add('disappear');
       question3.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      secondAns.trim() == '2. The global object' ||
+      secondAns.trim() == '3. The parent object of the current object' ||
+      secondAns.trim() == '1. The current function being executed'
+    ) {
       question2.classList.add('disappear');
       question3.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -76,10 +89,16 @@ startBtn.addEventListener('click', function () {
       question3.classList.add('disappear');
       question4.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      thirdAns.trim() == '1. var x = 5;' ||
+      thirdAns.trim() == '2. let y = 10;' ||
+      thirdAns.trim() == '3. cont z = 15;'
+    ) {
       question3.classList.add('disappear');
       question4.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -92,14 +111,20 @@ startBtn.addEventListener('click', function () {
   const answer4 = (event) => {
     var fourthAns = event.target.textContent;
     console.log(fourthAns);
-    if (fourthAns.trim() == '1. push()') {
+    if (fourthAns.trim() == '3. Equality operator (strict comparison)') {
       question4.classList.add('disappear');
       question5.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      fourthAns.trim() == '1. Assignment operator' ||
+      fourthAns.trim() == '2. Logical AND operator' ||
+      fourthAns.trim() == '4. Addition operator'
+    ) {
       question4.classList.add('disappear');
       question5.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -115,10 +140,16 @@ startBtn.addEventListener('click', function () {
       question5.classList.add('disappear');
       question6.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      fithAns.trim() == '2. "Null and Notation"' ||
+      fithAns.trim() == '3. "No Approximate Number"' ||
+      fithAns.trim() == '4. "Negligible Arithmetic Notion"'
+    ) {
       question5.classList.add('disappear');
       question6.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -134,10 +165,16 @@ startBtn.addEventListener('click', function () {
       question6.classList.add('disappear');
       question7.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      sixthAns.trim() == '2. 7' ||
+      sixthAns.trim() == '3. "7"' ||
+      sixthAns.trim() == '4. Error'
+    ) {
       question6.classList.add('disappear');
       question7.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -153,10 +190,16 @@ startBtn.addEventListener('click', function () {
       question7.classList.add('disappear');
       question8.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      sevethAns.trim() == '1. It checks if a variable is defined' ||
+      sevethAns.trim() == '3. It converts a value to a string' ||
+      sevethAns.trim() == '4. It performs mathematical calculations'
+    ) {
       question7.classList.add('disappear');
       question8.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -172,10 +215,16 @@ startBtn.addEventListener('click', function () {
       question8.classList.add('disappear');
       question9.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      eigthAns.trim() == '1. continue' ||
+      eigthAns.trim() == '3. return' ||
+      eigthAns.trim() == '4. exit'
+    ) {
       question8.classList.add('disappear');
       question9.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -191,10 +240,16 @@ startBtn.addEventListener('click', function () {
       question9.classList.add('disappear');
       question10.classList.remove('disappear');
       result.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      sevethAns.trim() == '1. join()' ||
+      sevethAns.trim() == '2. push()' ||
+      sevethAns.trim() == '4. merge()'
+    ) {
       question9.classList.add('disappear');
       question10.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -212,10 +267,16 @@ startBtn.addEventListener('click', function () {
       question10.classList.add('disappear');
       donPage.classList.remove('disappear');
       lastResult.classList.remove('disappear');
+      totalScore++;
+      console.log(totalScore);
       setTimeout(() => {
         lastResult.classList.add('disappear');
       }, 1000);
-    } else {
+    } else if (
+      tenthAns.trim() == '1. To prevent the execution of certain code' ||
+      tenthAns.trim() == '2. To secure and encrypt data' ||
+      tenthAns.trim() == '4. It is a deprecated feature and should be used'
+    ) {
       question10.classList.add('disappear');
       donPage.classList.remove('disappear');
       lastResult2.classList.remove('disappear');
@@ -229,6 +290,8 @@ startBtn.addEventListener('click', function () {
     donPage.classList.add('disappear');
     highScorePage.classList.remove('disappear');
     returnHomeBtn.addEventListener('click', home);
+    totalScore = totalScore * 5;
+    score.textContent = input.value + ' ' + totalScore;
   };
   const home = (event) => {
     highScorePage.classList.add('disappear');
