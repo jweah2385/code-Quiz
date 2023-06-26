@@ -29,6 +29,10 @@ startBtn.addEventListener('click', function () {
   var totalScore = 0;
   var sec = 100;
   input.value = '';
+  /*Timer function, counts down from a hundred seconds 
+  when seconds are equal to or less than 0, it takes the points the user has
+  ,exits the quiz and goes to the All Done page else it updates the countdown
+  every second on the page*/
   function countdown() {
     var countdownInterval = setInterval(function () {
       if (sec <= 0) {
@@ -64,6 +68,9 @@ startBtn.addEventListener('click', function () {
   introPage.classList.add('disappear');
   question1.classList.remove('disappear');
 
+  /*All answer# functions reveal the question, take the users choice, 
+  increase their score by 1 if right and reveal correct, else decreases
+  the time by 5seconds and reveals wrong. Both scenarios reveals the next page*/
   const answer1 = (event) => {
     let firstAns = event.target.textContent;
     score.classList.remove('disappear');
@@ -324,26 +331,24 @@ startBtn.addEventListener('click', function () {
     sec = 0;
   };
 
+  /*The submit function takes the user to the All Done page, creates a 
+  local storage that will store the users higest score(includes first), then resets the 
+  score for another attempt. Also places user high score on high score page*/
   const submit = (event) => {
-    sec = 0;
     donPage.classList.add('disappear');
     highScorePage.classList.remove('disappear');
     returnHomeBtn.addEventListener('click', home);
     var storedScore = localStorage.getItem('userScore');
     var currentScore = totalScore;
-    console.log('Value of currentScore: ' + currentScore);
-    console.log('Value of storedScore: ' + storedScore);
-    console.log('Value of totalScore: ' + totalScore);
 
     if (!storedScore || currentScore > parseInt(storedScore)) {
       localStorage.setItem('userScore', currentScore);
       score.textContent = input.value + ' ' + currentScore;
     } else {
-      currentScore = parseInt(storedScore); // Use the storedScore as the currentScore
+      currentScore = parseInt(storedScore);
     }
 
-    totalScore = 0; // Reset totalScore for the next quiz attempt
-    console.log('Value of totalScore after reset: ' + totalScore);
+    totalScore = 0;
   };
 
   const home = (event) => {
