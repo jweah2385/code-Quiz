@@ -3,6 +3,7 @@ var startBtn = document.querySelector('.start-button');
 var questionPage = document.querySelector('.questions');
 var donPage = document.querySelector('.done-page');
 var highScorePage = document.querySelector('.high-score');
+var timer = document.querySelector('.time');
 var question1 = document.querySelector('.question1');
 var question2 = document.querySelector('.question2');
 var question3 = document.querySelector('.question3');
@@ -21,22 +22,56 @@ var allDoneBtn = document.querySelector('.done-page-button');
 var returnHomeBtn = document.querySelector('.go-back-button');
 var clearScoreBtn = document.querySelector('.clear-score');
 var score = document.querySelector('.score');
-var input = document.querySelector('input');
+var input = document.querySelector('.initials');
+var finalScore = document.querySelector('.final-score');
 
-var totalScore = 0;
 startBtn.addEventListener('click', function () {
+  var totalScore = 0;
+  var sec = 100;
+  input.value = '';
+  function countdown() {
+    var countdownInterval = setInterval(function () {
+      if (sec <= 0) {
+        clearInterval(countdownInterval);
+        console.log('Countdown complete!');
+
+        question1.classList.add('disappear');
+        question2.classList.add('disappear');
+        question3.classList.add('disappear');
+        question4.classList.add('disappear');
+        question5.classList.add('disappear');
+        question6.classList.add('disappear');
+        question7.classList.add('disappear');
+        question8.classList.add('disappear');
+        question9.classList.add('disappear');
+        question10.classList.add('disappear');
+        result.classList.add('disappear');
+        result2.classList.add('disappear');
+        donPage.classList.remove('disappear');
+
+        finalScore.textContent = 'Your final score is: ' + totalScore;
+        sec = 0;
+        timer.textContent = 'Time: ' + sec;
+      } else {
+        timer.textContent = 'Time: ' + sec;
+        console.log(sec);
+        sec--;
+      }
+    }, 1000);
+  }
+  countdown();
+  console.log('totalScore at the start of the quiz: ' + totalScore);
   introPage.classList.add('disappear');
   question1.classList.remove('disappear');
+
   const answer1 = (event) => {
     let firstAns = event.target.textContent;
-    //console.log(clickedValue);
     score.classList.remove('disappear');
     if (firstAns.trim() == '1. push()') {
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -45,6 +80,7 @@ startBtn.addEventListener('click', function () {
       firstAns.trim() == '3. shift()' ||
       firstAns.trim() == '4. unshift()'
     ) {
+      sec = sec - 5;
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -56,7 +92,6 @@ startBtn.addEventListener('click', function () {
 
   const answer2 = (event) => {
     let secondAns = event.target.textContent;
-    console.log(secondAns);
     if (
       secondAns.trim() == '4. It depends on the context in which it is used'
     ) {
@@ -64,7 +99,6 @@ startBtn.addEventListener('click', function () {
       question3.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -73,6 +107,7 @@ startBtn.addEventListener('click', function () {
       secondAns.trim() == '3. The parent object of the current object' ||
       secondAns.trim() == '1. The current function being executed'
     ) {
+      sec = sec - 5;
       question2.classList.add('disappear');
       question3.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -84,13 +119,11 @@ startBtn.addEventListener('click', function () {
 
   const answer3 = (event) => {
     var thirdAns = event.target.textContent;
-    console.log(thirdAns);
     if (thirdAns.trim() == '4. int a = 20;') {
       question3.classList.add('disappear');
       question4.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -99,6 +132,7 @@ startBtn.addEventListener('click', function () {
       thirdAns.trim() == '2. let y = 10;' ||
       thirdAns.trim() == '3. cont z = 15;'
     ) {
+      sec = sec - 5;
       question3.classList.add('disappear');
       question4.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -110,13 +144,11 @@ startBtn.addEventListener('click', function () {
 
   const answer4 = (event) => {
     var fourthAns = event.target.textContent;
-    console.log(fourthAns);
     if (fourthAns.trim() == '3. Equality operator (strict comparison)') {
       question4.classList.add('disappear');
       question5.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -125,6 +157,7 @@ startBtn.addEventListener('click', function () {
       fourthAns.trim() == '2. Logical AND operator' ||
       fourthAns.trim() == '4. Addition operator'
     ) {
+      sec = sec - 5;
       question4.classList.add('disappear');
       question5.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -141,7 +174,6 @@ startBtn.addEventListener('click', function () {
       question6.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -150,6 +182,7 @@ startBtn.addEventListener('click', function () {
       fithAns.trim() == '3. "No Approximate Number"' ||
       fithAns.trim() == '4. "Negligible Arithmetic Notion"'
     ) {
+      sec = sec - 5;
       question5.classList.add('disappear');
       question6.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -166,7 +199,6 @@ startBtn.addEventListener('click', function () {
       question7.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -175,6 +207,7 @@ startBtn.addEventListener('click', function () {
       sixthAns.trim() == '3. "7"' ||
       sixthAns.trim() == '4. Error'
     ) {
+      sec = sec - 5;
       question6.classList.add('disappear');
       question7.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -191,7 +224,6 @@ startBtn.addEventListener('click', function () {
       question8.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -200,6 +232,7 @@ startBtn.addEventListener('click', function () {
       sevethAns.trim() == '3. It converts a value to a string' ||
       sevethAns.trim() == '4. It performs mathematical calculations'
     ) {
+      sec = sec - 5;
       question7.classList.add('disappear');
       question8.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -216,7 +249,6 @@ startBtn.addEventListener('click', function () {
       question9.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -225,6 +257,7 @@ startBtn.addEventListener('click', function () {
       eigthAns.trim() == '3. return' ||
       eigthAns.trim() == '4. exit'
     ) {
+      sec = sec - 5;
       question8.classList.add('disappear');
       question9.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -241,7 +274,6 @@ startBtn.addEventListener('click', function () {
       question10.classList.remove('disappear');
       result.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         result.classList.add('disappear');
       }, 1000);
@@ -250,6 +282,7 @@ startBtn.addEventListener('click', function () {
       sevethAns.trim() == '2. push()' ||
       sevethAns.trim() == '4. merge()'
     ) {
+      sec = sec - 5;
       question9.classList.add('disappear');
       question10.classList.remove('disappear');
       result2.classList.remove('disappear');
@@ -261,6 +294,8 @@ startBtn.addEventListener('click', function () {
 
   const answer10 = (event) => {
     var tenthAns = event.target.textContent;
+    lastResult2.classList.add('disappear');
+    lastResult.classList.add('disappear');
     if (
       tenthAns.trim() == '3. To control the visibility and scope of variables'
     ) {
@@ -268,7 +303,6 @@ startBtn.addEventListener('click', function () {
       donPage.classList.remove('disappear');
       lastResult.classList.remove('disappear');
       totalScore++;
-      console.log(totalScore);
       setTimeout(() => {
         lastResult.classList.add('disappear');
       }, 1000);
@@ -277,6 +311,7 @@ startBtn.addEventListener('click', function () {
       tenthAns.trim() == '2. To secure and encrypt data' ||
       tenthAns.trim() == '4. It is a deprecated feature and should be used'
     ) {
+      sec = sec - 5;
       question10.classList.add('disappear');
       donPage.classList.remove('disappear');
       lastResult2.classList.remove('disappear');
@@ -284,15 +319,33 @@ startBtn.addEventListener('click', function () {
         lastResult2.classList.add('disappear');
       }, 1000);
     }
+
+    finalScore.textContent = 'Your final score is: ' + totalScore;
+    sec = 0;
   };
 
   const submit = (event) => {
+    sec = 0;
     donPage.classList.add('disappear');
     highScorePage.classList.remove('disappear');
     returnHomeBtn.addEventListener('click', home);
-    totalScore = totalScore * 5;
-    score.textContent = input.value + ' ' + totalScore;
+    var storedScore = localStorage.getItem('userScore');
+    var currentScore = totalScore;
+    console.log('Value of currentScore: ' + currentScore);
+    console.log('Value of storedScore: ' + storedScore);
+    console.log('Value of totalScore: ' + totalScore);
+
+    if (!storedScore || currentScore > parseInt(storedScore)) {
+      localStorage.setItem('userScore', currentScore);
+      score.textContent = input.value + ' ' + currentScore;
+    } else {
+      currentScore = parseInt(storedScore); // Use the storedScore as the currentScore
+    }
+
+    totalScore = 0; // Reset totalScore for the next quiz attempt
+    console.log('Value of totalScore after reset: ' + totalScore);
   };
+
   const home = (event) => {
     highScorePage.classList.add('disappear');
     introPage.classList.remove('disappear');
@@ -300,7 +353,9 @@ startBtn.addEventListener('click', function () {
 
   const clearScore = (event) => {
     score.classList.add('disappear');
+    localStorage.clear();
   };
+
   question1.addEventListener('click', answer1);
   question2.addEventListener('click', answer2);
   question3.addEventListener('click', answer3);
@@ -315,7 +370,3 @@ startBtn.addEventListener('click', function () {
   returnHomeBtn.addEventListener('click', home);
   clearScoreBtn.addEventListener('click', clearScore);
 });
-
-var clear = setTimeout(() => {
-  result.classList.add('disappear');
-}, 2000);
