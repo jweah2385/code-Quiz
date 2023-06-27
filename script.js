@@ -15,15 +15,17 @@ var question8 = document.querySelector('.question8');
 var question9 = document.querySelector('.question9');
 var question10 = document.querySelector('.question10');
 var result = document.querySelector('.result');
-var result2 = document.querySelector('.result2');
+var message = document.querySelector('.message');
+var lastMessage = document.querySelector('.last-message');
 var lastResult = document.querySelector('.last-result');
-var lastResult2 = document.querySelector('.last-result2');
 var allDoneBtn = document.querySelector('.done-page-button');
 var returnHomeBtn = document.querySelector('.go-back-button');
 var clearScoreBtn = document.querySelector('.clear-score');
 var score = document.querySelector('.score');
 var input = document.querySelector('.initials');
 var finalScore = document.querySelector('.final-score');
+var viewHighScore = document.querySelector('.view-score');
+var quizCount = 0;
 
 startBtn.addEventListener('click', function () {
   var totalScore = 0;
@@ -50,7 +52,6 @@ startBtn.addEventListener('click', function () {
         question9.classList.add('disappear');
         question10.classList.add('disappear');
         result.classList.add('disappear');
-        result2.classList.add('disappear');
         donPage.classList.remove('disappear');
 
         finalScore.textContent = 'Your final score is: ' + totalScore;
@@ -58,7 +59,7 @@ startBtn.addEventListener('click', function () {
         timer.textContent = 'Time: ' + sec;
       } else {
         timer.textContent = 'Time: ' + sec;
-        console.log(sec);
+
         sec--;
       }
     }, 1000);
@@ -72,12 +73,14 @@ startBtn.addEventListener('click', function () {
   increase their score by 1 if right and reveal correct, else decreases
   the time by 5seconds and reveals wrong. Both scenarios reveals the next page*/
   const answer1 = (event) => {
+    quizCount++;
     let firstAns = event.target.textContent;
     score.classList.remove('disappear');
     if (firstAns.trim() == '1. push()') {
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -90,9 +93,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question1.classList.add('disappear');
       question2.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -105,6 +109,8 @@ startBtn.addEventListener('click', function () {
       question2.classList.add('disappear');
       question3.classList.remove('disappear');
       result.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -117,9 +123,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question2.classList.add('disappear');
       question3.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -130,6 +137,7 @@ startBtn.addEventListener('click', function () {
       question3.classList.add('disappear');
       question4.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -142,9 +150,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question3.classList.add('disappear');
       question4.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -155,6 +164,7 @@ startBtn.addEventListener('click', function () {
       question4.classList.add('disappear');
       question5.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -167,9 +177,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question4.classList.add('disappear');
       question5.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -180,6 +191,7 @@ startBtn.addEventListener('click', function () {
       question5.classList.add('disappear');
       question6.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -192,9 +204,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question5.classList.add('disappear');
       question6.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -205,6 +218,7 @@ startBtn.addEventListener('click', function () {
       question6.classList.add('disappear');
       question7.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -217,9 +231,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question6.classList.add('disappear');
       question7.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -230,6 +245,7 @@ startBtn.addEventListener('click', function () {
       question7.classList.add('disappear');
       question8.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -242,9 +258,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question7.classList.add('disappear');
       question8.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -255,6 +272,7 @@ startBtn.addEventListener('click', function () {
       question8.classList.add('disappear');
       question9.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -267,9 +285,10 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question8.classList.add('disappear');
       question9.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
@@ -280,6 +299,7 @@ startBtn.addEventListener('click', function () {
       question9.classList.add('disappear');
       question10.classList.remove('disappear');
       result.classList.remove('disappear');
+      message.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         result.classList.add('disappear');
@@ -292,16 +312,16 @@ startBtn.addEventListener('click', function () {
       sec = sec - 5;
       question9.classList.add('disappear');
       question10.classList.remove('disappear');
-      result2.classList.remove('disappear');
+      result.classList.remove('disappear');
+      message.textContent = 'Wrong!';
       setTimeout(() => {
-        result2.classList.add('disappear');
+        result.classList.add('disappear');
       }, 1000);
     }
   };
 
   const answer10 = (event) => {
     var tenthAns = event.target.textContent;
-    lastResult2.classList.add('disappear');
     lastResult.classList.add('disappear');
     if (
       tenthAns.trim() == '3. To control the visibility and scope of variables'
@@ -309,6 +329,7 @@ startBtn.addEventListener('click', function () {
       question10.classList.add('disappear');
       donPage.classList.remove('disappear');
       lastResult.classList.remove('disappear');
+      lastMessage.textContent = 'Correct!';
       totalScore++;
       setTimeout(() => {
         lastResult.classList.add('disappear');
@@ -316,14 +337,15 @@ startBtn.addEventListener('click', function () {
     } else if (
       tenthAns.trim() == '1. To prevent the execution of certain code' ||
       tenthAns.trim() == '2. To secure and encrypt data' ||
-      tenthAns.trim() == '4. It is a deprecated feature and should be used'
+      tenthAns.trim() == '4. None of the above'
     ) {
       sec = sec - 5;
       question10.classList.add('disappear');
       donPage.classList.remove('disappear');
-      lastResult2.classList.remove('disappear');
+      lastResult.classList.remove('disappear');
+      lastMessage.textContent = 'Wrong!';
       setTimeout(() => {
-        lastResult2.classList.add('disappear');
+        lastResult.classList.add('disappear');
       }, 1000);
     }
 
@@ -374,4 +396,27 @@ startBtn.addEventListener('click', function () {
   allDoneBtn.addEventListener('click', submit);
   returnHomeBtn.addEventListener('click', home);
   clearScoreBtn.addEventListener('click', clearScore);
+});
+
+/*viewHighScore allows the user to view the high score only after they
+have attempted the quiz*/
+viewHighScore.addEventListener('click', function () {
+  if (quizCount <= 0) {
+    alert('You must have one attempt of the quiz before seeing a highscore.');
+  } else {
+    introPage.classList.add('disappear');
+    highScorePage.classList.remove('disappear');
+    question1.classList.add('disappear');
+    question2.classList.add('disappear');
+    question3.classList.add('disappear');
+    question4.classList.add('disappear');
+    question5.classList.add('disappear');
+    question6.classList.add('disappear');
+    question7.classList.add('disappear');
+    question8.classList.add('disappear');
+    question9.classList.add('disappear');
+    question10.classList.add('disappear');
+    result.classList.add('disappear');
+    donPage.classList.add('disappear');
+  }
 });

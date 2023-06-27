@@ -26,14 +26,14 @@
   <body>
     <header>
       <div class="header">
-        <div class="view-score">View high scores</div>
+        <div class="view-score">View High Score</div>
         <div class="time">Time:</div>
       </div>
     </header>
     <main class="main">
       <h1>Coding Quiz Challenge</h1>
       <div>
-        <p>
+        <p class="instructions">
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answer will penalize your
           score/time by five seconds!
@@ -190,35 +190,26 @@
           <button class="question-buttons answer">
             3. To control the visibility and scope of variables
           </button>
-          <button class="question-buttons answer">
-            4. It is a deprecated feature and should be used
-          </button>
+          <button class="question-buttons answer">4. None of the above</button>
         </div>
         <!--To control the visibility and scope of the variables-->
       </div>
       <div class="result disappear">
         <hr />
-        <h2>Correct!</h2>
-      </div>
-      <div class="result2 disappear">
-        <hr />
-        <h2>Wrong!</h2>
+        <h2 class="message">Correct!</h2>
       </div>
     </section>
     <section class="done-page disappear">
       <h1>All done!</h1>
       <h3 class="final-score">Your final score is:</h3>
       <div class="enter-info">
-        <h3>Enter initials:</h3>
+        <h3 class="enter-initials">Enter initials:</h3>
         <input class="textbox initials" type="text" />
         <button class="done-page-button">Submit</button>
       </div>
       <hr class="done-page-hr" />
       <div style="margin-top: -2.8rem" class="last-result disappear">
-        <h2>Correct!</h2>
-      </div>
-      <div style="margin-top: -2.8rem" class="last-result2 disappear">
-        <h2>Wrong!</h2>
+        <h2 class="last-message">Correct!</h2>
       </div>
     </section>
     <section class="high-score disappear">
@@ -228,6 +219,9 @@
         <button class="go-back-button">Go Back</button>
         <button class="clear-score">Clear high Score</button>
       </div>
+      <p class="score-dis">
+        If high score does not appear clear-score and try again.
+      </p>
     </section>
     <script src="script.js"></script>
   </body>
