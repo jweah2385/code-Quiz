@@ -27,8 +27,8 @@ This project is licensed under the MIT License.
 
 ## Preview
 
-Here is runthough of the quiz.
-![Quiz (1)](https://github.com/jweah2385/code-Quiz/assets/134350647/c0d8b3ea-7bff-4f21-9159-e20b629eec41)
+![quizRs](https://github.com/jweah2385/code-Quiz/assets/134350647/af6891f5-f59b-478e-9775-0b6637750d6a)
+
 
 
 ## Technologies Used
