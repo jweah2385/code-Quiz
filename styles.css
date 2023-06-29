@@ -263,11 +263,13 @@ button:hover {
 
 @media (max-width: 415px) {
   .questions {
-    top: 2rem;
+    top: 1.8rem;
+    width: 80%;
+    left: 16%;
   }
 
   .done-page {
-    left: 10%;
+    left: 10.5%;
     top: 8rem;
   }
 
@@ -280,5 +282,37 @@ button:hover {
   .score-dis {
     width: 100%;
     text-align: center;
+  }
+
+  .high-score-buttons {
+    width: 120%;
+  }
+}
+
+@media (max-width: 375px) {
+  .questions {
+    top: 1.8rem;
+    width: 80%;
+    left: 16%;
+  }
+
+  .done-page {
+    left: 7.5%;
+    top: 8rem;
+  }
+
+  .high-score {
+    position: relative;
+    left: 17.5%;
+    top: 8rem;
+  }
+
+  .score-dis {
+    width: 100%;
+    text-align: center;
+  }
+
+  .high-score-buttons {
+    width: 120%;
   }
 }
