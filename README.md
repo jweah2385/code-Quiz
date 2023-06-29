@@ -1,4 +1,4 @@
-# Quiz
+# JavaScript Quiz
 
 This is a javascript quiz that has the user solve 10 questions. The user will have a hundred seconds to complete the quiz. Each wrong answer will result in 5-second deduction from the countdown. When the countdown reaches zero or the user completes the quiz, the highest score will be recorded and saved.
 
@@ -27,7 +27,9 @@ This project is licensed under the MIT License.
 
 ## Preview
 
-Here is runthough of the quiz.
+![quizRs](https://github.com/jweah2385/code-Quiz/assets/134350647/af6891f5-f59b-478e-9775-0b6637750d6a)
+
+
 
 ## Technologies Used
 
@@ -36,6 +38,8 @@ Here is runthough of the quiz.
 3. JavaScript
 
 ## Deployment
+[
+](https://jweah2385.github.io/code-Quiz/)https://jweah2385.github.io/code-Quiz/
 
 ## Contact
 
