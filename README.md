@@ -37,8 +37,6 @@ Here is runthough of the quiz.
 
 ## Deployment
 
-[](https://jweah2385.github.io/code-Quiz/)https://jweah2385.github.io/code-Quiz/
-
 ## Contact
 
 jweah@aggies.ncat.edu
