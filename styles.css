@@ -233,6 +233,7 @@ button:hover {
     width: 20.19rem;
     top: -0.2rem;
   }
+
   .enter-initials {
     position: relative;
     top: -0.7rem;
@@ -257,5 +258,27 @@ button:hover {
   .enter-initials {
     position: relative;
     top: -0.7rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .questions {
+    top: 2rem;
+  }
+
+  .done-page {
+    left: 10%;
+    top: 8rem;
+  }
+
+  .high-score {
+    position: relative;
+    left: 20%;
+    top: 8rem;
+  }
+
+  .score-dis {
+    width: 100%;
+    text-align: center;
   }
 }
